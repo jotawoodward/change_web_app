@@ -2,16 +2,15 @@ import validateInput from './validateInput';
 import displayError from './displayError';
 import changeRequest from './changeRequest';
 import displayItems from './displayItems';
- 
-export default async function calcChange(e) {
 
+export default async function calcChange(e) {
   e.preventDefault();
-  const price = document.getElementById('price').value;
-  const amount = document.getElementById('amount').value;
+  const price = Number(document.getElementById('price').value);
+  const amount = Number(document.getElementById('amount').value);
 
   // Validate
-  let error = validateInput(price, amount);
-  if (!!error) {
+  const error = validateInput(price, amount);
+  if (error) {
     document.getElementById('calc-error').innerHTML = await displayError(error);
     return;
   }
@@ -19,17 +18,17 @@ export default async function calcChange(e) {
   // Call api to get change
   let response;
   try {
-    response = await changeRequest(parseFloat(price), parseFloat(amount))
-  } 
-  finally { 
-    if (!response.success) 
-      {
-        document.getElementById('calc-error').innerHTML = await displayError("Sorry an error has occured. Please try again later");
-        return;
-      }
+    response = await changeRequest(price, amount);
+  } catch {
+    response.success = false;
+  }
+  if (!response.success) {
+    document.getElementById('calc-error').innerHTML = await displayError('Sorry an error has occured. Please try again later');
+    return;
   }
 
   // Display results
-  const output = displayItems(response.data)
+  const output = await displayItems(response.data);
   document.getElementById('results').innerHTML = output;
+  document.getElementById('calc-error').innerHTML='';
 }

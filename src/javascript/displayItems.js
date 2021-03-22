@@ -1,11 +1,12 @@
-export default async function displayItems(data) {
-  // QUESTION: Alternatives to using HTML fragments like this?
-  const output = data.map((item, i) => `
-    <div>
-      <input type="checkbox" id="${i}">
-      <label for="${i}" id="item-${i}">${item}</label>
-    </div>
-  `).join('\n');
-  return data;
+import displayImage from './displayImage';
 
-};
+export default function displayItems(data) {
+  // TODO use a map to preserrve order
+  // const output = Object.entries(data).map(item => displayImage(item)).join('\n');
+  let output = '';
+  for (const x in data) {
+    output += displayImage(x, data[x]);
+  }
+
+  return output;
+}

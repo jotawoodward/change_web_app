@@ -43,6 +43,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "eslint-plugin-jest": "^24.3.2",
     "jest-fetch-mock": "^3.0.3"
   }
 }
