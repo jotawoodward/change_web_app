@@ -18,16 +18,16 @@ describe('Test fragments', () => {
   it('Display image', async () => {
     const fragment = await displayItems(data);
     expect(fragment).toEqual(`
-    <div>
-      <img src=../assets/20-twenty-pound-note.png alt=£20>
+    <div class="container">
+      <img src=src/assets/20-twenty-pound-note.png alt=£20>
       <label>x 2</label>
     </div>
-    <div>
-      <img src=../assets/2p-two-penny-coin.png alt=2p>
+    <div class="container">
+      <img src=src/assets/2p-two-penny-coin.png alt=2p>
       <label>x 1</label>
     </div>
-    <div>
-      <img src=../assets/20p-twenty-penny-coin.png alt=20p>
+    <div class="container">
+      <img src=src/assets/20p-twenty-penny-coin.png alt=20p>
       <label>x 1</label>
     </div>`);
   });

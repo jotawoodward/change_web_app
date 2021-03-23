@@ -34,6 +34,6 @@ export default async function changeRequest(price, amount) {
     result.success = false;
   }
 
-  //TODO reverse order result.data
+  // TODO reverse order result.data
   return result;
 }

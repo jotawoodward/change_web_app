@@ -10,11 +10,17 @@
 
 <body>
     <h1>Change calculator</h1>
-    <h2>Details</h2>
+    <h2>Input details</h2>
     <form>
         <div class="form-group">
-            <input type="number" min="0" step='0.01' id="amount" class="form-amount">Given amount</input>
-            <input type="number" min="0" step='0.01' id="price" class="form-price">Purchase price</input>
+            <div class="container">
+                <label class ="input-label">Given amount</label>
+                <input type="number" min="0" step='0.01' id="amount" class="form-amount"></input>
+            </div>
+            <div class="container">
+                <label class ="input-label">Purchase price</label>
+                <input type="number" min="0" step='0.01' id="price" class="form-price"></input>
+            </div>
             <button class="btn btn-primary" id="submitPost">
                 Calculate change
             </button>
@@ -25,7 +31,7 @@
 
     <h2>Change calculated:</h2>
     <div class="error" id="calc-error"></div>
-    <div class="error" id="results"></div>
+    <div class="results" class="results" id="results"></div>
 
 
     <script src="dist/index.bundle.js"></script>

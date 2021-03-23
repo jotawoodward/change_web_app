@@ -30,5 +30,5 @@ export default async function calcChange(e) {
   // Display results
   const output = await displayItems(response.data);
   document.getElementById('results').innerHTML = output;
-  document.getElementById('calc-error').innerHTML='';
+  document.getElementById('calc-error').innerHTML = '';
 }

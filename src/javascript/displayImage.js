@@ -29,8 +29,8 @@ const alt = {
 export default function displayImage(x, data) {
   if (data > 0) {
     const y = `
-    <div>
-      <img src=${images[x]} alt=${alt[x]} width="250">
+    <div class="container">
+      <img src=${images[x]} alt=${alt[x]}>
       <label>x ${data}</label>
     </div>`;
     return y;
