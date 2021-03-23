@@ -1,4 +1,5 @@
 import flask
+from decimal import *
 from flask_cors import CORS, cross_origin
 app = flask.Flask(__name__)
 cors = CORS(app)
@@ -6,11 +7,13 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 
 
 def calc_change(diff):
-    options = [50, 20, 10, 5, 2, 1, 0.5, 0.2, 0.1, 0.05, 0.02, 0.01]
+    options = [50.0, 20, 10, 5, 2, 1, 0.5, 0.2, 0.1, 0.05, 0.02, 0.01]
     calc_list=[]
     for x in options:
-        number= int(diff/x)
-        diff -= number*x
+        print(diff)
+        number= int(Decimal(str(diff))/Decimal(str(x)))
+        print(number)
+        diff = Decimal(str(diff))- Decimal(str(number))*Decimal(str(x))
         calc_list.append({"piece":x, "number": number})
     return calc_list
 
