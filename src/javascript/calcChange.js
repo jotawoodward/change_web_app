@@ -10,7 +10,7 @@ export default async function calcChange(e) {
 
   // Validate
   const error = validateInput(price, amount);
-  if (error) {
+  if (error !== '') {
     document.getElementById('calc-error').innerHTML = await displayError(error);
     return;
   }
