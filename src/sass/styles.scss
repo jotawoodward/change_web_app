@@ -4,6 +4,7 @@ body {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   height: 100vh;
   margin-top: 7px;
+  margin-left:32px;
 }
 
 h1 {
@@ -24,20 +25,11 @@ button {
   text-align: center;
   font-size: 16px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  display: flex;
-  align-items: center;
   margin-top: 8px;  
   margin-bottom: 8px;
 }
 
-form {
-  align-items: center;
-  margin-top: 15px;
-  padding: 15px 32px;
-}
-
 label {
-  align-items: center;
   font-size: 24px;
   color: rgba(122, 120, 120, 0.849);
 }
@@ -52,10 +44,23 @@ input {
   margin-bottom: 8px;
 }
 
-.container{
-  display: flex;
+form{
+  margin: 0 auto; 
+  width:250px;
   align-items: center;
-  align-content: center;
+  @media screen and (min-width: 800px) {
+    width:700px;
+  }
+}
+
+.container{
+  display: inline-block;
+}
+
+.form-group{
+  display: block;
+  margin-left: auto;
+  margin-right: auto
 }
 
 .input-label{
@@ -68,4 +73,13 @@ input {
 
 .error {
   color: rgb(253, 2, 2);
+}
+
+.results{
+  margin: 0 auto;
+  width:250px;
+  align-items: center;  
+  @media screen and (min-width: 800px) {
+    width:700px;
+  }
 }
