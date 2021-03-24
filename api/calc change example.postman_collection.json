@@ -1,0 +1,104 @@
+{
+	"info": {
+		"_postman_id": "65c98d81-9537-42b7-a314-9a9e712931df",
+		"name": "calc change example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "calc change example",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const result = [",
+							"    {",
+							"        \"number\": 0,",
+							"        \"piece\": 50.0",
+							"    },",
+							"    {",
+							"        \"number\": 0,",
+							"        \"piece\": 20",
+							"    },",
+							"    {",
+							"        \"number\": 1,",
+							"        \"piece\": 10",
+							"    },",
+							"    {",
+							"        \"number\": 0,",
+							"        \"piece\": 5",
+							"    },",
+							"    {",
+							"        \"number\": 2,",
+							"        \"piece\": 2",
+							"    },",
+							"    {",
+							"        \"number\": 0,",
+							"        \"piece\": 1",
+							"    },",
+							"    {",
+							"        \"number\": 1,",
+							"        \"piece\": 0.5",
+							"    },",
+							"    {",
+							"        \"number\": 0,",
+							"        \"piece\": 0.2",
+							"    },",
+							"    {",
+							"        \"number\": 0,",
+							"        \"piece\": 0.1",
+							"    },",
+							"    {",
+							"        \"number\": 0,",
+							"        \"piece\": 0.05",
+							"    },",
+							"    {",
+							"        \"number\": 0,",
+							"        \"piece\": 0.02",
+							"    },",
+							"    {",
+							"        \"number\": 0,",
+							"        \"piece\": 0.01",
+							"    }",
+							"]",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response body\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.eql(result);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"amount\":\"20\",\n \"price\":\"5.5\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/calc-change",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"calc-change"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
