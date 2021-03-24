@@ -1,0 +1,23 @@
+{
+  "name": "automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "open": "cypress open",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint cypress --ext .js",
+    "lint:fix": "eslint cypress --ext .js --fix"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^6.8.0",
+    "cypress-cucumber-preprocessor": "^4.0.3",
+    "eslint": "^7.22.0",
+    "eslint-plugin-cypress": "^2.11.2"
+  }
+}
